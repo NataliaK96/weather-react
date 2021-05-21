@@ -1,10 +1,9 @@
-@import '../../constants/colors.scss';
-
 .header {
   display: flex;
   justify-content: center;
   .header__title {
     font-size: 102px;
+    font-family: Ubuntu-Bold;
   }
 }
 

@@ -2,5 +2,11 @@ import React from 'react';
 import style from './Footer.module.scss';
 
 export const Footer = () => {
-  return <footer>C ЛЮБОВЬЮ ОТ MERCURY DEVELOPMENT</footer>;
+  return (
+    <footer className={style.footer}>
+      <span className={style.footer__name}>
+        C ЛЮБОВЬЮ ОТ MERCURY DEVELOPMENT
+      </span>
+    </footer>
+  );
 };

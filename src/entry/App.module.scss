@@ -24,4 +24,7 @@
 }
 .wrapper {
   position: relative;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
 }
