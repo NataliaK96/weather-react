@@ -1,0 +1,24 @@
+@import '../constants/colors.scss';
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $accent;
+  color: $baseWeak;
+  position: relative;
+}
+.background-top {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.background-bottom {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
