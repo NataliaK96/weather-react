@@ -1,11 +1,23 @@
 @import '../../constants/colors.scss';
 
-.app {
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  background-color: $accent;
-  color: $baseWeak;
+  .header__title {
+    font-size: 102px;
+  }
+}
+
+.title {
+  &__item {
+    line-height: 122px;
+  }
+  &__item_top {
+    top: 65px;
+  }
+  &__item_bottom {
+    position: relative;
+    top: 95px;
+    left: -45px;
+  }
 }
