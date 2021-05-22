@@ -25,13 +25,17 @@ const MainPage = () => {
       >
         <div className={style.main__data}>
           {store.daily.length ? (
-            store.daily.map((d) => (
-              <Card
-                key={d.dt}
-                date={d.dt}
-                image={d.icon}
-                temperature={d.temp}
-              />
+            store.daily.map((d, i) => (
+              <>
+                {i < 3 && (
+                  <Card
+                    key={d.dt}
+                    date={d.dt}
+                    image={d.icon}
+                    temperature={d.temp}
+                  />
+                )}
+              </>
             ))
           ) : (
             <SectionPlaceholder />
@@ -40,8 +44,38 @@ const MainPage = () => {
       </Section>
       <Section
         title="Forecast for a Date in the Past"
-        controls={<Datepicker />}
-      />
+        controls={
+          <>
+            <SelectCity
+              cities={store.points}
+              onSelect={(id) => {
+                store.selectHistoryPoint(id);
+                store.fetchHistory();
+              }}
+            />
+            <Datepicker
+              date={store.selectedHistoryDate}
+              onSelect={(date) => {
+                store.selectHistoryDate(date);
+                store.fetchHistory();
+              }}
+            />
+          </>
+        }
+      >
+        <div className={style.main__data}>
+          {store.history ? (
+            <Card
+              key={store.history.dt}
+              date={store.history.dt}
+              image={store.history.icon}
+              temperature={store.history.temp}
+            />
+          ) : (
+            <SectionPlaceholder />
+          )}
+        </div>
+      </Section>
     </main>
   );
 };

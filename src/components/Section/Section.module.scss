@@ -8,17 +8,20 @@
   width: 544px;
   height: 424px;
   padding: 50px 58px;
-  .section__title {
+  &__title {
     color: $baseStrong;
     font-size: 32px;
     font-family: Ubuntu-Bold;
     margin: 0 0 25px;
     line-height: 32px;
   }
-  .section__main {
+  &__main {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  &__controls {
+    display: flex;
+    justify-content: space-between;
   }
 }

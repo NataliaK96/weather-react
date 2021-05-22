@@ -8,7 +8,7 @@ type Params = {
 
 export const getCurrentWeather = ({ lat, lon, excludes }: Params) =>
   request(
-    `/onecall?lat=${lat}&lon=${lon}&exclude=${excludes?.join(',') || ''}&units=metric`,
+    `/onecall?lat=${lat}&lon=${lon}&exclude=${excludes?.join(',') || ''}`,
     {
       method: 'GET',
     }
