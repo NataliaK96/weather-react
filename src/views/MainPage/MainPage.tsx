@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { getIconSrc } from 'api';
+import React from 'react';
 import { Datepicker } from 'components/Datepicker';
 import { Section } from 'components/Section';
 import { SelectCity } from 'components/SelectCity';
@@ -7,12 +6,9 @@ import { observer } from 'mobx-react';
 import store from 'store';
 import style from './Main.module.scss';
 import { SectionPlaceholder } from 'components/SectionPlaceholder';
-import moment from 'moment';
+import { Card } from 'components/Card';
 
 const MainPage = () => {
-  useEffect(() => {
-    //store.fetchDaily();
-  }, []);
   return (
     <main className={style.main}>
       <Section
@@ -27,12 +23,20 @@ const MainPage = () => {
           />
         }
       >
-        {store.daily.length? store.daily.map((d) => (
-          <div key={d.dt}>
-            <div>{`${moment(d.dt*1000).format('DD MMM YYYY').toLowerCase()} ${d.temp}`}</div>
-            <img src={getIconSrc(d.icon)} alt="icon" />
-          </div>
-        )): <SectionPlaceholder/>}
+        <div className={style.main__data}>
+          {store.daily.length ? (
+            store.daily.map((d) => (
+              <Card
+                key={d.dt}
+                date={d.dt}
+                image={d.icon}
+                temperature={d.temp}
+              />
+            ))
+          ) : (
+            <SectionPlaceholder />
+          )}
+        </div>
       </Section>
       <Section
         title="Forecast for a Date in the Past"
