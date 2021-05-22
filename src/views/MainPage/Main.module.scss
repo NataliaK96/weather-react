@@ -1,3 +1,9 @@
+@import 'constants/colors.scss';
+
 .main {
+  display: flex;
   flex: auto;
+  justify-content: space-evenly;
+  align-items: center;
+  color: $baseStrong;
 }
