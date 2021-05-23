@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Datepicker } from 'components/Datepicker';
 import { Section } from 'components/Section';
 import { SelectCity } from 'components/SelectCity';
@@ -27,20 +27,41 @@ const MainPage = () => {
         <div className={style.main__data}>
           {store.daily.length ? (
             <>
-              <SwiperLeft />
-              {store.daily.map((d, i) => (
+              {store.isMobile ? (
                 <>
-                  {i < 3 && (
+                  {store.daily.map((d) => (
+                    <Card
+                      key={d.dt}
+                      date={d.dt}
+                      image={d.icon}
+                      temperature={d.temp}
+                      />
+                      ))}
+                </>
+              ) : (
+                <>
+                  <SwiperLeft
+                    disable={store.inStartSlider}
+                    onClick={() => {
+                      store.prevSlide();
+                    }}
+                  />
+                  {store.shownCardSet.map((d, i) => (
                     <Card
                       key={d.dt}
                       date={d.dt}
                       image={d.icon}
                       temperature={d.temp}
                     />
-                  )}
+                  ))}
+                  <SwiperRight
+                    disable={store.inEndSlider}
+                    onClick={() => {
+                      store.nextSlide();
+                    }}
+                  />
                 </>
-              ))}
-              <SwiperRight />
+              )}
             </>
           ) : (
             <SectionPlaceholder />
@@ -75,6 +96,7 @@ const MainPage = () => {
               date={store.history.dt}
               image={store.history.icon}
               temperature={store.history.temp}
+              bigIcon
             />
           ) : (
             <SectionPlaceholder />
