@@ -4,3 +4,10 @@
   background: url('../../assets/icons/calendar.svg');
   background-repeat: no-repeat;
 }
+
+.datepicker {
+  &__item {
+    height: 48px;
+    width: 252px;
+  }
+}

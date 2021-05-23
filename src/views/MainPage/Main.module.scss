@@ -3,10 +3,13 @@
 .main {
   display: flex;
   flex: auto;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 46px;
   .main__data {
     display: flex;
     flex: auto;
+    justify-content: center;
+    align-items: center;
   }
 }

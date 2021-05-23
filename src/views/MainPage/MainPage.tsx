@@ -7,6 +7,7 @@ import store from 'store';
 import style from './Main.module.scss';
 import { SectionPlaceholder } from 'components/SectionPlaceholder';
 import { Card } from 'components/Card';
+import { SwiperLeft, SwiperRight } from 'components/Buttons';
 
 const MainPage = () => {
   return (
@@ -25,18 +26,22 @@ const MainPage = () => {
       >
         <div className={style.main__data}>
           {store.daily.length ? (
-            store.daily.map((d, i) => (
-              <>
-                {i < 3 && (
-                  <Card
-                    key={d.dt}
-                    date={d.dt}
-                    image={d.icon}
-                    temperature={d.temp}
-                  />
-                )}
-              </>
-            ))
+            <>
+              <SwiperLeft />
+              {store.daily.map((d, i) => (
+                <>
+                  {i < 3 && (
+                    <Card
+                      key={d.dt}
+                      date={d.dt}
+                      image={d.icon}
+                      temperature={d.temp}
+                    />
+                  )}
+                </>
+              ))}
+              <SwiperRight />
+            </>
           ) : (
             <SectionPlaceholder />
           )}

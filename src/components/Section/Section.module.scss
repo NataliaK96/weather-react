@@ -8,11 +8,12 @@
   width: 544px;
   height: 424px;
   padding: 50px 58px;
+  margin: 0 17px 34px;
   &__title {
     color: $baseStrong;
     font-size: 32px;
     font-family: Ubuntu-Bold;
-    margin: 0 0 25px;
+    margin: 0 0 32px;
     line-height: 32px;
   }
   &__main {
@@ -23,5 +24,7 @@
   &__controls {
     display: flex;
     justify-content: space-between;
+    height: 48px;
+    margin-bottom: 54px;
   }
 }

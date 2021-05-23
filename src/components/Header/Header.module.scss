@@ -1,9 +1,13 @@
 .header {
   display: flex;
   justify-content: center;
+  margin-bottom: 60px;
   .header__title {
     font-size: 102px;
     font-family: Ubuntu-Bold;
+    @media (max-width: 900px) {
+      font-size: 80px;
+    }
   }
 }
 

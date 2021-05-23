@@ -1,1 +1,8 @@
 @import 'constants/colors.scss';
+
+.select {
+  &__item {
+    height: 48px;
+    width: 252px;
+  }
+}

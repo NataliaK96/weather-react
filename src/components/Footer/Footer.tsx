@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer className={style.footer}>
       <span className={style.footer__name}>
-        C ЛЮБОВЬЮ ОТ MERCURY DEVELOPMENT
+        C ЛЮБОВЬЮ ДЛЯ MERCURY DEVELOPMENT
       </span>
     </footer>
   );
