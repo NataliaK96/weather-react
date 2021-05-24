@@ -34,8 +34,8 @@ const Store = types
     },
   }))
   .actions((self) => ({
-    setIsMobile: (isMobile: boolean)=> {
-      self.isMobile = isMobile
+    setIsMobile: (isMobile: boolean) => {
+      self.isMobile = isMobile;
     },
     nextSlide: () => {
       const { dailySlider } = self;

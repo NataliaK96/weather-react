@@ -9,6 +9,7 @@ import { observer } from 'mobx-react';
 import store from 'store';
 
 function App() {
+
   const onWindowResize = () => {
     if (window.innerWidth < 700) {
       store.setIsMobile(true);
@@ -16,21 +17,23 @@ function App() {
       store.setIsMobile(false);
     }
   };
+
   useEffect(() => {
     onWindowResize();
     window.addEventListener('resize', onWindowResize);
     return () => window.removeEventListener('resize', onWindowResize);
   }, []);
+  
   return (
     <div className={style.app}>
       <div className={style['background-wrapper']}>
-      <img src={bgtop} alt="background" className={style['background-top']} />
-      <img
-        src={bgBottom}
-        alt="background"
-        className={style['background-bottom']}
+        <img src={bgtop} alt="background" className={style['background-top']} />
+        <img
+          src={bgBottom}
+          alt="background"
+          className={style['background-bottom']}
         />
-        </div>
+      </div>
       <div className={style.wrapper}>
         <Header />
         <MainPage />

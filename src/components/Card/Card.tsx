@@ -31,7 +31,7 @@ export const Card: React.FC<Props> = ({
         />
       </div>
       <p className={style.card__temperature}>
-        +{`${Math.floor(temperature)}`}&deg;
+        {`${temperature >= 0 ? '+' : '-'}${Math.floor(temperature)}`}&deg;
       </p>
     </section>
   );

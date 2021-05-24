@@ -23,7 +23,9 @@ export const SelectCity: React.FC<Props> = ({ cities, city, onChange }) => {
       }}
       onBlur={() => openList(false)}
     >
-      <div className={city ? style.select__value : style.select__default}>{city?.name || 'Select city'}</div>
+      <div className={city ? style.select__value : style.select__default}>
+        {city?.name || 'Select city'}
+      </div>
       <img
         className={style.select__chevron}
         src={listIsOpen ? chevronTop : chevronBottom}

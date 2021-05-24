@@ -7,9 +7,6 @@ type Params = {
 };
 
 export const getHistoryWeather = ({ lat, lon, time }: Params) =>
-  request(
-    `/onecall/timemachine?lat=${lat}&lon=${lon}&dt=${time}`,
-    {
-      method: 'GET',
-    }
-  );
+  request(`/onecall/timemachine?lat=${lat}&lon=${lon}&dt=${time}`, {
+    method: 'GET',
+  });

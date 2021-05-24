@@ -16,7 +16,7 @@ const MainPage = () => {
         title="7 Days Forecast"
         controls={
           <SelectCity
-          city={store.selectedPoint}
+            city={store.selectedPoint}
             cities={store.points}
             onChange={(id) => {
               store.selectPoint(id);
@@ -36,8 +36,8 @@ const MainPage = () => {
                       date={d.dt}
                       image={d.icon}
                       temperature={d.temp}
-                      />
-                      ))}
+                    />
+                  ))}
                 </>
               ) : (
                 <>
@@ -74,7 +74,7 @@ const MainPage = () => {
         controls={
           <>
             <SelectCity
-            city={store.selectedHistoryPoint}
+              city={store.selectedHistoryPoint}
               cities={store.points}
               onChange={(id) => {
                 store.selectHistoryPoint(id);
