@@ -5,10 +5,21 @@
   box-shadow: 0px 4px 4px rgba(4, 5, 73, 0.25),
     14px 14px 20px rgba(5, 6, 114, 0.2);
   border-radius: 8px;
-  width: 544px;
-  height: 424px;
+  width: 660px;
+  height: 524px;
+  box-sizing: border-box;
   padding: 50px 58px;
   margin: 0 17px 34px;
+  @media (max-width: 700px) {
+    width: 390px;
+    padding: 32px 24px;
+    margin: 0 10px 10px;
+  }
+  @media (max-width: 400px) {
+    width: 300px;
+    padding: 32px 24px;
+    margin: 0 10px 10px;
+  }
   &__title {
     color: $baseStrong;
     font-size: 32px;
@@ -20,11 +31,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 700px) {
+      overflow: auto;
+      justify-content: flex-start;
+    }
   }
   &__controls {
     display: flex;
     justify-content: space-between;
-    height: 48px;
     margin-bottom: 54px;
+    @media (max-width: 700px) {
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
   }
 }

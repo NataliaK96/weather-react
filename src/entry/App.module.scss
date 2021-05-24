@@ -8,6 +8,12 @@
   color: $baseWeak;
   position: relative;
 }
+.background-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
 .background-top {
   position: absolute;
   width: 100%;

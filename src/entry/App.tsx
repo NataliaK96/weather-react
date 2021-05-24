@@ -23,12 +23,14 @@ function App() {
   }, []);
   return (
     <div className={style.app}>
+      <div className={style['background-wrapper']}>
       <img src={bgtop} alt="background" className={style['background-top']} />
       <img
         src={bgBottom}
         alt="background"
         className={style['background-bottom']}
-      />
+        />
+        </div>
       <div className={style.wrapper}>
         <Header />
         <MainPage />

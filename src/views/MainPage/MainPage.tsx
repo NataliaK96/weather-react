@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React from 'react';
 import { Datepicker } from 'components/Datepicker';
 import { Section } from 'components/Section';
 import { SelectCity } from 'components/SelectCity';
@@ -16,8 +16,9 @@ const MainPage = () => {
         title="7 Days Forecast"
         controls={
           <SelectCity
+          city={store.selectedPoint}
             cities={store.points}
-            onSelect={(id) => {
+            onChange={(id) => {
               store.selectPoint(id);
               store.fetchDaily();
             }}
@@ -73,8 +74,9 @@ const MainPage = () => {
         controls={
           <>
             <SelectCity
+            city={store.selectedHistoryPoint}
               cities={store.points}
-              onSelect={(id) => {
+              onChange={(id) => {
                 store.selectHistoryPoint(id);
                 store.fetchHistory();
               }}
