@@ -1,4 +1,4 @@
-# weather-react
+# Weather forecast
 
 **Deploy:** https://nataliak96.github.io/weather-react/
 
