@@ -1,1 +1,0 @@
-export { SectionPlaceholder } from './SectionPlaceholder';
