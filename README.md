@@ -1,6 +1,6 @@
 # weather-react
 
-**Deploy:**
+**Deploy:** https://nataliak96.github.io/weather-react/
 
 ## Template
 
